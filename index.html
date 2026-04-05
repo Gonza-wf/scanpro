@@ -2,267 +2,715 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scan Pro - Diagnóstico Automotriz de Avanzada</title>
-    <!-- Tailwind CSS para el diseño -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Scan Pro - Diagnóstico automotriz avanzado en Mendoza. Escaneo profesional para todas las marcas con tecnología de última generación. Especialistas en pickups y vehículos diesel.">
+    <meta name="keywords" content="diagnóstico automotriz, escaneo vehicular, diagnóstico automotriz Mendoza, scanner automotriz, diagnóstico diesel, regeneración DPF, codificación inyectores">
+    <meta name="author" content="Scan Pro - Rodrigo Martin">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e31e24">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23e31e24' width='100' height='100' rx='20'/><text x='50' y='65' text-anchor='middle' fill='white' font-size='40' font-family='sans-serif' font-weight='bold'>SP</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23e31e24' width='100' height='100' rx='20'/><text x='50' y='65' text-anchor='middle' fill='white' font-size='40' font-family='sans-serif' font-weight='bold'>SP</text></svg>">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scanpro.com.ar/">
+    <meta property="og:title" content="Scan Pro - Diagnóstico Automotriz Avanzado | Mendoza">
+    <meta property="og:description" content="Diagnóstico profesional para todas las marcas. Especialistas en pickups 4x4, regeneración DPF y codificación de inyectores. Tecnología nivel concesionario.">
+    <meta property="og:image" content="https://scanpro.com.ar/og-image.jpg">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Scan Pro - Diagnóstico Automotriz Avanzado">
+    <meta name="twitter:description" content="Diagnóstico profesional para todas las marcas. Especialistas en pickups 4x4 y tecnología diesel.">
+    <meta name="twitter:image" content="https://scanpro.com.ar/og-image.jpg">
+
+    <title>Scan Pro - Diagnóstico Automotriz Avanzado | Mendoza</title>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome para los iconos -->
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-            background-color: #f8fafc;
-        }
 
-        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
 
-        /* Fondo oscuro con efecto de fibra de carbono suave */
-        .hero-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            position: relative;
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-red': '#e31e24',
+                        'brand-dark': '#0f172a',
+                    }
+                }
+            }
         }
+    </script>
 
-        .hero-gradient::after {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(#e31e24 0.5px, transparent 0.5px);
-            background-size: 30px 30px;
-            opacity: 0.1;
-            pointer-events: none;
-        }
-
-        /* Animación de brillo para el texto */
-        .text-glow {
-            text-shadow: 0 0 15px rgba(227, 30, 36, 0.5);
-        }
-
-        /* Animación para el carrusel de marcas */
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .marquee {
-            display: flex;
-            width: 200%;
-            animation: scroll 25s linear infinite;
-        }
-        
-        .service-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-    </style>
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "Scan Pro - Diagnóstico Automotriz",
+        "description": "Servicio de diagnóstico automotriz avanzado. Especialistas en pickups 4x4, regeneración DPF y codificación de inyectores.",
+        "url": "https://scanpro.com.ar",
+        "telephone": "+5492615547377",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mendoza",
+            "addressCountry": "AR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-32.8895",
+            "longitude": "-68.8458"
+        },
+        "openingHours": "Mo-Sa 08:00-18:00",
+        "priceRange": "$$",
+        "areaServed": {
+            "@type": "City",
+            "name": "Mendoza"
+        },
+        "brand": ["Toyota", "Ford", "Volkswagen", "Chevrolet", "Nissan", "Ram", "Jeep", "Audi", "BMW", "Peugeot", "Fiat"]
+    }
+    </script>
 </head>
-<body class="text-slate-900">
+<body class="text-slate-900 font-inter">
 
-    <!-- Navegación Fija -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="bg-red-600 text-white p-1.5 rounded-lg shadow-lg shadow-red-500/20">
-                    <i class="fas fa-microchip text-lg"></i>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100" role="navigation" aria-label="Navegación principal">
+        <div class="container mx-auto px-3 sm:px-4 py-2 sm:py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-1.5 sm:gap-2 group" aria-label="Scan Pro - Inicio">
+                <div class="logo-icon bg-red-600 text-white p-1 sm:p-1.5 rounded-lg shadow-lg shadow-red-500/20 transition-transform group-hover:scale-110 group-active:scale-95">
+                    <i class="fas fa-microchip text-base sm:text-lg" aria-hidden="true"></i>
                 </div>
-                <span class="text-xl font-extrabold tracking-tighter font-orbitron text-slate-900 uppercase">SCAN PRO</span>
+                <span class="logo-text text-lg sm:text-xl font-extrabold tracking-tighter font-orbitron text-slate-900 uppercase">SCAN PRO</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-6 lg:gap-8">
+                <a href="#beneficios" class="text-slate-600 hover:text-red-600 font-medium transition-colors py-2">Beneficios</a>
+                <a href="#servicios" class="text-slate-600 hover:text-red-600 font-medium transition-colors py-2">Servicios</a>
+                <a href="#ubicacion" class="text-slate-600 hover:text-red-600 font-medium transition-colors py-2">Ubicación</a>
             </div>
-            <a href="https://wa.me/5492615547377" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-xs font-bold flex items-center gap-2 transition-transform active:scale-95 shadow-md">
-                <i class="fab fa-whatsapp"></i> <span class="hidden xs:inline uppercase">WhatsApp</span>
+
+            <!-- WhatsApp Button - Solo visible en desktop -->
+            <a href="https://wa.me/5492615547377?text=Hola,%20necesito%20un%20diagnóstico%20para%20mi%20vehículo"
+               class="btn-whatsapp hidden md:flex bg-green-600 hover:bg-green-700 active:bg-green-800 text-white px-4 py-2.5 rounded-full text-sm font-bold items-center gap-2 transition-all shadow-lg shadow-green-600/25"
+               aria-label="Contactar por WhatsApp">
+                <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i>
+                <span class="uppercase tracking-wide">WhatsApp</span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle md:hidden p-2.5 text-slate-700 hover:text-red-600 active:bg-red-50 transition-all rounded-xl"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu">
+                <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu md:hidden" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+        <div class="mobile-menu-content flex flex-col items-center justify-center h-full text-white px-6">
+            <button class="menu-close absolute top-4 right-4 sm:top-6 sm:right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                    aria-label="Cerrar menú">
+                <i class="fas fa-times text-2xl" aria-hidden="true"></i>
+            </button>
+
+            <nav class="flex flex-col items-center gap-6 text-xl sm:text-2xl font-bold w-full">
+                <a href="#beneficios" class="w-full text-center py-4 px-6 rounded-2xl hover:bg-white/10 transition-colors">
+                    <i class="fas fa-star mr-3 text-yellow-500" aria-hidden="true"></i>
+                    Beneficios
+                </a>
+                <a href="#servicios" class="w-full text-center py-4 px-6 rounded-2xl hover:bg-white/10 transition-colors">
+                    <i class="fas fa-cogs mr-3 text-red-500" aria-hidden="true"></i>
+                    Servicios
+                </a>
+                <a href="#pickups" class="w-full text-center py-4 px-6 rounded-2xl hover:bg-white/10 transition-colors">
+                    <i class="fas fa-truck mr-3 text-red-500" aria-hidden="true"></i>
+                    Pickups
+                </a>
+                <a href="#ubicacion" class="w-full text-center py-4 px-6 rounded-2xl hover:bg-white/10 transition-colors">
+                    <i class="fas fa-map-marker-alt mr-3 text-red-500" aria-hidden="true"></i>
+                    Ubicación
+                </a>
+                <a href="#faq" class="w-full text-center py-4 px-6 rounded-2xl hover:bg-white/10 transition-colors">
+                    <i class="fas fa-question-circle mr-3 text-red-500" aria-hidden="true"></i>
+                    FAQ
+                </a>
+            </nav>
+
+            <a href="https://wa.me/5492615547377?text=Hola,%20necesito%20un%20diagnóstico%20para%20mi%20vehículo"
+               class="mt-8 w-full max-w-xs bg-green-600 hover:bg-green-700 active:bg-green-800 text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-xl">
+                <i class="fab fa-whatsapp text-2xl" aria-hidden="true"></i>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <header class="hero-gradient min-h-[100vh] sm:min-h-[90vh] flex items-center pt-20 sm:pt-24 pb-8 sm:pb-12 overflow-hidden text-white">
+            <div class="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-8 sm:gap-12">
+
+                <!-- Hero Content -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left z-10 pt-4 sm:pt-0">
+                    <span class="hero-badge inline-block px-3 sm:px-4 py-1.5 sm:py-1 mb-4 sm:mb-6 text-[9px] sm:text-[10px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-red-500 uppercase border border-red-500/40 rounded-full bg-red-500/10">
+                        Equipamiento de última generación
+                    </span>
+
+                    <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 font-orbitron uppercase tracking-tight px-2 sm:px-0">
+                        <span class="block">Diagnóstico Automotriz</span>
+                        <span class="text-red-600 text-glow">Tecnología Profesional</span>
+                    </h1>
+
+                    <p class="hero-description text-slate-300 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light px-2 sm:px-0">
+                        Localizamos fallas que otros no encuentran. Escaneo profundo de sistemas para vehículos nacionales e importados con <strong>precisión nivel concesionario</strong>.
+                    </p>
+
+                    <div class="hero-buttons flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 px-2 sm:px-0">
+                        <a href="https://wa.me/5492615547377?text=Hola,%20necesito%20un%20diagnóstico%20para%20mi%20vehículo" class="btn-primary btn-ripple w-full sm:w-auto bg-green-600 hover:bg-green-700 active:bg-green-800 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-600/30 text-center uppercase text-sm tracking-wider min-h-[52px] flex items-center justify-center">
+                            <i class="fab fa-whatsapp mr-2 text-lg" aria-hidden="true"></i>
+                            Contactar Ahora
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto border-2 border-white/30 text-white hover:bg-white/10 active:bg-white/20 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl font-bold transition-all text-center backdrop-blur-sm min-h-[52px] flex items-center justify-center">
+                            <i class="fas fa-search mr-2" aria-hidden="true"></i>
+                            Ver Servicios
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="hero-visual w-full lg:w-1/2 relative flex justify-center mt-6 sm:mt-8 lg:mt-0 hidden xs:flex">
+                    <div class="relative z-10 bg-slate-800 p-3 sm:p-4 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border border-slate-700 max-w-[260px] sm:max-w-[320px] md:max-w-md w-full animate-float">
+                        <div class="scanner-screen bg-black aspect-[4/3] rounded-[1.5rem] sm:rounded-[1.8rem] flex flex-col items-center justify-center relative overflow-hidden border border-slate-600">
+                            <div class="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent"></div>
+                            <i class="fas fa-satellite-dish text-red-600 text-4xl sm:text-5xl mb-2 sm:mb-3 hero-visual-icon" aria-hidden="true"></i>
+                            <p class="text-white text-[8px] sm:text-[9px] font-orbitron tracking-[0.4em] sm:tracking-[0.5em] opacity-80">SCAN PRO SYSTEM V2</p>
+                        </div>
+                    </div>
+
+                    <div class="hidden sm:block absolute -top-10 -right-10 w-48 h-48 bg-red-600/20 rounded-full blur-[80px] pointer-events-none"></div>
+                    <div class="hidden sm:block absolute -bottom-10 -left-10 w-32 h-32 bg-red-600/10 rounded-full blur-[60px] pointer-events-none"></div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce hidden sm:flex flex-col items-center text-white/40">
+                <span class="text-[10px] uppercase tracking-widest mb-2">Scroll</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </div>
+        </header>
+
+        <!-- Benefits Section -->
+        <section id="beneficios" class="py-12 sm:py-16 bg-white border-b border-slate-100" aria-label="Beneficios">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold font-orbitron uppercase mb-2" data-animate="fade-up">¿Por Qué Elegirnos?</h2>
+                    <p class="text-slate-500 text-sm sm:text-base">Experiencia y tecnología al servicio de tu vehículo</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                    <div class="benefit-card bg-slate-50 p-4 sm:p-6 rounded-2xl text-center border border-slate-100" data-animate="fade-up">
+                        <div class="benefit-icon w-12 h-12 sm:w-14 sm:h-14 bg-red-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 text-red-600 text-xl sm:text-2xl">
+                            <i class="fas fa-award" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-bold text-sm sm:text-base mb-1">+10 Años</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm">De experiencia</p>
+                    </div>
+
+                    <div class="benefit-card bg-slate-50 p-4 sm:p-6 rounded-2xl text-center border border-slate-100 stagger-1" data-animate="fade-up">
+                        <div class="benefit-icon w-12 h-12 sm:w-14 sm:h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 text-blue-600 text-xl sm:text-2xl">
+                            <i class="fas fa-car" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-bold text-sm sm:text-base mb-1">Todas las Marcas</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm">Nacionales e importados</p>
+                    </div>
+
+                    <div class="benefit-card bg-slate-50 p-4 sm:p-6 rounded-2xl text-center border border-slate-100 stagger-2" data-animate="fade-up">
+                        <div class="benefit-icon w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 text-green-600 text-xl sm:text-2xl">
+                            <i class="fas fa-bolt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-bold text-sm sm:text-base mb-1">Diagnóstico Rápido</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm">Resultados inmediatos</p>
+                    </div>
+
+                    <div class="benefit-card bg-slate-50 p-4 sm:p-6 rounded-2xl text-center border border-slate-100 stagger-3" data-animate="fade-up">
+                        <div class="benefit-icon w-12 h-12 sm:w-14 sm:h-14 bg-yellow-100 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 text-yellow-600 text-xl sm:text-2xl">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-bold text-sm sm:text-base mb-1">Garantía</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm">En todos los servicios</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <section class="marquee-container py-8 sm:py-12 bg-white border-b border-slate-100 overflow-hidden" aria-label="Marcas que atendemos">
+            <div class="text-center mb-6 sm:mb-8 px-4">
+                <h2 class="text-[9px] sm:text-[10px] font-bold tracking-[0.3em] sm:tracking-[0.4em] text-slate-400 uppercase mb-1 sm:mb-2">Cobertura Nacional e Internacional</h2>
+                <p class="text-base sm:text-xl font-bold text-slate-900 font-orbitron uppercase tracking-tight" data-animate="fade-up">Diagnosticamos Todas las Marcas</p>
+            </div>
+
+            <div class="relative flex overflow-x-hidden">
+                <div class="marquee py-3 sm:py-4" role="marquee" aria-label="Lista de marcas de vehículos">
+                    <div class="flex items-center gap-8 sm:gap-10 md:gap-20 px-4">
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Toyota</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Ford</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Volkswagen</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Chevrolet</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Nissan</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Ram</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Jeep</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Audi</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">BMW</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Peugeot</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Fiat</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Honda</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Hyundai</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Mercedes</span>
+                    </div>
+                    <div class="flex items-center gap-8 sm:gap-10 md:gap-20 px-4">
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Toyota</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Ford</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Volkswagen</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Chevrolet</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Nissan</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Ram</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Jeep</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Audi</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">BMW</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Peugeot</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Fiat</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Honda</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Hyundai</span>
+                        <span class="marquee-brand text-base sm:text-lg md:text-xl font-black text-slate-400 uppercase tracking-tight hover:text-red-600 transition-colors cursor-default">Mercedes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pickups Section -->
+        <section id="pickups" class="py-10 sm:py-16 lg:py-20 bg-slate-50">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="bg-white rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[3rem] p-5 sm:p-8 lg:p-14 border border-slate-100 shadow-xl flex flex-col lg:flex-row items-center gap-6 sm:gap-10 lg:gap-12">
+
+                    <!-- Content -->
+                    <div class="w-full lg:w-1/2" data-animate="fade-left">
+                        <h2 class="text-2xl sm:text-3xl font-bold font-orbitron mb-4 sm:mb-6 leading-tight uppercase">
+                            Especialistas en <span class="text-red-600">Pickups 4x4</span>
+                        </h2>
+                        <p class="text-slate-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
+                            Contamos con tecnología de avanzada específica para camionetas. Realizamos reseteos de mantenimiento y configuraciones profundas.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                            <div class="pickup-card bg-slate-50 p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3 border border-slate-100 active:border-red-300 transition-colors cursor-default">
+                                <div class="icon-box w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white text-xs flex-shrink-0">
+                                    <i class="fas fa-truck" aria-hidden="true"></i>
+                                </div>
+                                <span class="font-bold text-[10px] sm:text-xs uppercase tracking-tight leading-tight">Hilux / SW4 / Corolla</span>
+                            </div>
+                            <div class="pickup-card bg-slate-50 p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3 border border-slate-100 active:border-red-300 transition-colors cursor-default">
+                                <div class="icon-box w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-xs flex-shrink-0">
+                                    <i class="fas fa-truck" aria-hidden="true"></i>
+                                </div>
+                                <span class="font-bold text-[10px] sm:text-xs uppercase tracking-tight leading-tight">Amarok / Amarok V6</span>
+                            </div>
+                            <div class="pickup-card bg-slate-50 p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3 border border-slate-100 active:border-red-300 transition-colors cursor-default">
+                                <div class="icon-box w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white text-xs flex-shrink-0">
+                                    <i class="fas fa-truck" aria-hidden="true"></i>
+                                </div>
+                                <span class="font-bold text-[10px] sm:text-xs uppercase tracking-tight leading-tight">Ranger / Raptor / F150</span>
+                            </div>
+                            <div class="pickup-card bg-slate-50 p-3 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3 border border-slate-100 active:border-red-300 transition-colors cursor-default">
+                                <div class="icon-box w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-xs flex-shrink-0">
+                                    <i class="fas fa-truck" aria-hidden="true"></i>
+                                </div>
+                                <span class="font-bold text-[10px] sm:text-xs uppercase tracking-tight leading-tight">S10 / Ram 1500 / 2500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Cards -->
+                    <div class="w-full lg:w-1/2 grid grid-cols-2 gap-3 sm:gap-4" data-animate="fade-right">
+                        <div class="bg-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-white text-center flex flex-col items-center justify-center aspect-square shadow-lg shadow-slate-900/10 active:scale-95 transition-transform">
+                            <i class="fas fa-smog text-2xl sm:text-3xl mb-2 sm:mb-3 text-red-600" aria-hidden="true"></i>
+                            <span class="text-[8px] sm:text-[9px] font-bold uppercase tracking-widest leading-tight">Regeneración DPF Diesel</span>
+                        </div>
+                        <div class="bg-slate-100 rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-slate-800 text-center flex flex-col items-center justify-center aspect-square border border-slate-200 active:scale-95 transition-transform">
+                            <i class="fas fa-code-branch text-2xl sm:text-3xl mb-2 sm:mb-3" aria-hidden="true"></i>
+                            <span class="text-[8px] sm:text-[9px] font-bold uppercase tracking-widest leading-tight">Codificación Inyectores</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 font-orbitron uppercase" data-animate="fade-up">Nuestros Servicios</h2>
+                <p class="text-slate-500 text-sm sm:text-base mb-8 sm:mb-12 max-w-2xl mx-auto">Diagnóstico profesional con equipos de última generación</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
+                    <!-- Card 1 -->
+                    <article class="service-card p-5 sm:p-6 lg:p-8 bg-gray-50 rounded-2xl sm:rounded-3xl border border-gray-100 text-left active:bg-gray-100 transition-colors" data-animate="fade-up">
+                        <div class="service-icon w-12 h-12 sm:w-12 sm:h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-lg sm:text-xl mb-4 sm:mb-6 shadow-sm">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold mb-2 sm:mb-3 font-orbitron uppercase tracking-tight">Escaneo Integral</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            Acceso a todos los módulos: Motor, ABS, Airbag, BSI, Confort. Informe de fallas histórico y actual.
+                        </p>
+                        <div class="flex items-center gap-2 text-xs text-slate-500">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            <span>30-60 min aprox.</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="service-card p-5 sm:p-6 lg:p-8 bg-gray-50 rounded-2xl sm:rounded-3xl border border-gray-100 text-left stagger-1 active:bg-gray-100 transition-colors" data-animate="fade-up">
+                        <div class="service-icon w-12 h-12 sm:w-12 sm:h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-lg sm:text-xl mb-4 sm:mb-6 shadow-sm">
+                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold mb-2 sm:mb-3 font-orbitron uppercase tracking-tight">Codificación Pro</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            Programación de llaves, emparejamiento de módulos, adaptación de cuerpos de aceleración y regeneraciones.
+                        </p>
+                        <div class="flex items-center gap-2 text-xs text-slate-500">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            <span>Según el servicio</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="service-card p-5 sm:p-6 lg:p-8 bg-gray-50 rounded-2xl sm:rounded-3xl border border-gray-100 text-left stagger-2 active:bg-gray-100 transition-colors" data-animate="fade-up">
+                        <div class="service-icon w-12 h-12 sm:w-12 sm:h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-lg sm:text-xl mb-4 sm:mb-6 shadow-sm">
+                            <i class="fas fa-flask" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg font-bold mb-2 sm:mb-3 font-orbitron uppercase tracking-tight">Pruebas Activas</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            Prueba bidireccional de componentes eléctricos para localizar fallas sin necesidad de desarmar el vehículo.
+                        </p>
+                        <div class="flex items-center gap-2 text-xs text-slate-500">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            <span>15-30 min aprox.</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonios" class="py-12 sm:py-16 bg-slate-50" aria-label="Testimonios">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold font-orbitron uppercase mb-2" data-animate="fade-up">Lo Que Dicen Nuestros Clientes</h2>
+                    <p class="text-slate-500 text-sm sm:text-base">Miles de vehículos diagnosticados con éxito</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                    <div class="testimonial-card bg-white p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm" data-animate="fade-up">
+                        <div class="flex items-center gap-1 mb-3">
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4 italic">"Excelente servicio. Me diagnosticaron un problema que en otros talleres no encontraron. Muy profesional y rápido."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-bold">JM</div>
+                            <div>
+                                <p class="font-bold text-sm">Juan M.</p>
+                                <p class="text-slate-500 text-xs">Toyota Hilux</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card bg-white p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm stagger-1" data-animate="fade-up">
+                        <div class="flex items-center gap-1 mb-3">
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4 italic">"Regeneraron el DPF de mi Amarok y quedó funcionando perfecto. Muy recomendable, precios honestos."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">CR</div>
+                            <div>
+                                <p class="font-bold text-sm">Carlos R.</p>
+                                <p class="text-slate-500 text-xs">VW Amarok</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card bg-white p-5 sm:p-6 rounded-2xl border border-slate-100 shadow-sm stagger-2" data-animate="fade-up">
+                        <div class="flex items-center gap-1 mb-3">
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4 italic">"Atención excelente. Me explicaron todo el proceso del diagnóstico. Volveré seguro para el service."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold">ML</div>
+                            <div>
+                                <p class="font-bold text-sm">María L.</p>
+                                <p class="text-slate-500 text-xs">Ford Ranger</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="ubicacion" class="py-12 sm:py-16 bg-white" aria-label="Ubicación">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold font-orbitron uppercase mb-2" data-animate="fade-up">Ubicación y Horarios</h2>
+                    <p class="text-slate-500 text-sm sm:text-base">Estamos en Mendoza, Argentina</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+                    <!-- Map -->
+                    <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-lg h-64 sm:h-80" data-animate="fade-left">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26885.46826605117!2d-68.86940782460938!3d-32.88945820000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e093ec45179bf%3A0x361c9cb7e4a6a0e7!2sMendoza%2C%20Argentina!5e0!3m2!1ses!2sus!4v1699999999999!5m2!1ses!2sus"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de Scan Pro en Mendoza">
+                        </iframe>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="flex flex-col gap-4 sm:gap-6" data-animate="fade-right">
+                        <!-- Address -->
+                        <div class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-100 flex items-start gap-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">Dirección</h3>
+                                <p class="text-slate-600 text-sm">Mendoza, Argentina</p>
+                                <a href="https://maps.google.com/?q=Mendoza,Argentina" target="_blank" rel="noopener" class="text-red-600 text-sm hover:underline mt-1 inline-block">
+                                    Ver en Google Maps <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-100 flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                                <i class="fas fa-clock text-xl" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">Horarios de Atención</h3>
+                                <div class="text-slate-600 text-sm space-y-1">
+                                    <p><span class="font-medium">Lunes a Viernes:</span> 8:00 - 18:00</p>
+                                    <p><span class="font-medium">Sábados:</span> 9:00 - 14:00</p>
+                                    <p><span class="font-medium text-slate-400">Domingos:</span> Cerrado</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-100 flex items-start gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 flex-shrink-0">
+                                <i class="fas fa-phone-alt text-xl" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">Contacto</h3>
+                                <a href="tel:2615547377" class="text-slate-600 text-sm hover:text-red-600 transition-colors block">
+                                    <i class="fas fa-phone mr-2" aria-hidden="true"></i>261 554 7377
+                                </a>
+                                <a href="https://wa.me/5492615547377" class="text-green-600 text-sm hover:text-green-700 transition-colors block mt-1">
+                                    <i class="fab fa-whatsapp mr-2" aria-hidden="true"></i>WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-12 sm:py-16 bg-slate-50" aria-label="Preguntas frecuentes">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold font-orbitron uppercase mb-2" data-animate="fade-up">Preguntas Frecuentes</h2>
+                    <p class="text-slate-500 text-sm sm:text-base">Resolvemos tus dudas</p>
+                </div>
+
+                <div class="max-w-3xl mx-auto space-y-3 sm:space-y-4" id="faq-container">
+                    <details class="bg-white rounded-xl border border-slate-200 overflow-hidden group" data-animate="fade-up">
+                        <summary class="p-4 sm:p-5 cursor-pointer font-bold flex items-center justify-between text-sm sm:text-base hover:text-red-600 transition-colors">
+                            ¿Qué marcas de vehículos atienden?
+                            <i class="fas fa-chevron-down text-slate-400 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                        </summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-slate-600 text-sm">
+                            Atendemos todas las marcas: Toyota, Ford, Volkswagen, Chevrolet, Nissan, Ram, Jeep, Audi, BMW, Peugeot, Fiat, Honda, Hyundai, Mercedes y más. Vehículos nacionales e importados.
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-xl border border-slate-200 overflow-hidden group stagger-1" data-animate="fade-up">
+                        <summary class="p-4 sm:p-5 cursor-pointer font-bold flex items-center justify-between text-sm sm:text-base hover:text-red-600 transition-colors">
+                            ¿Cuánto cuesta un diagnóstico?
+                            <i class="fas fa-chevron-down text-slate-400 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                        </summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-slate-600 text-sm">
+                            El precio varía según el tipo de vehículo y el servicio requerido. Te recomendamos contactarnos por WhatsApp para darte un presupuesto personalizado sin compromiso.
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-xl border border-slate-200 overflow-hidden group stagger-2" data-animate="fade-up">
+                        <summary class="p-4 sm:p-5 cursor-pointer font-bold flex items-center justify-between text-sm sm:text-base hover:text-red-600 transition-colors">
+                            ¿Hacen servicio a domicilio?
+                            <i class="fas fa-chevron-down text-slate-400 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                        </summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-slate-600 text-sm">
+                            Sí, ofrecemos servicio de diagnóstico a domicilio en la zona de Mendoza. Consultá disponibilidad y costo por WhatsApp.
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-xl border border-slate-200 overflow-hidden group stagger-3" data-animate="fade-up">
+                        <summary class="p-4 sm:p-5 cursor-pointer font-bold flex items-center justify-between text-sm sm:text-base hover:text-red-600 transition-colors">
+                            ¿Qué formas de pago aceptan?
+                            <i class="fas fa-chevron-down text-slate-400 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                        </summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-slate-600 text-sm">
+                            Aceptamos efectivo, transferencia bancaria y Mercado Pago. Para trabajos grandes podemos acordar pago en cuotas.
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-xl border border-slate-200 overflow-hidden group stagger-4" data-animate="fade-up">
+                        <summary class="p-4 sm:p-5 cursor-pointer font-bold flex items-center justify-between text-sm sm:text-base hover:text-red-600 transition-colors">
+                            ¿Ofrecen garantía en los servicios?
+                            <i class="fas fa-chevron-down text-slate-400 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+                        </summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-slate-600 text-sm">
+                            Sí, todos nuestros servicios incluyen garantía. El tiempo de garantía depende del tipo de trabajo realizado. Consultá por tu caso específico.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto" class="py-12 sm:py-16 lg:py-20 bg-slate-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <div class="contact-card max-w-xl mx-auto bg-white/5 border border-white/10 p-6 sm:p-8 lg:p-10 rounded-[2rem] sm:rounded-[3rem] backdrop-blur-sm shadow-2xl" data-animate="scale">
+                <div class="contact-icon w-16 h-16 sm:w-20 sm:h-20 bg-red-600 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-6 sm:mb-8 shadow-xl shadow-red-600/30 transition-transform">
+                    <i class="fas fa-id-card text-2xl sm:text-3xl" aria-hidden="true"></i>
+                </div>
+
+                <h2 class="text-[9px] sm:text-[10px] font-bold tracking-[0.3em] sm:tracking-[0.4em] text-red-500 uppercase mb-3 sm:mb-4 font-orbitron">Especialista en Diagnóstico</h2>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-1 font-orbitron uppercase">SCAN PRO</h3>
+                <p class="text-lg sm:text-xl font-bold text-slate-300 mb-2 italic">Rodrigo Martin</p>
+                <p class="text-slate-400 text-sm mb-6 sm:mb-8">Mendoza, Argentina</p>
+
+                <div class="flex flex-col gap-3 sm:gap-4 max-w-xs mx-auto">
+                    <a href="https://wa.me/5492615547377?text=Hola,%20necesito%20un%20diagnóstico%20para%20mi%20vehículo"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white py-4 sm:py-4 rounded-2xl font-bold text-base sm:text-lg flex items-center justify-center gap-3 transition-all shadow-xl shadow-green-600/10 min-h-[56px]">
+                        <i class="fab fa-whatsapp text-xl sm:text-2xl" aria-hidden="true"></i>
+                        WhatsApp
+                    </a>
+                    <a href="tel:2615547377"
+                       class="bg-white text-slate-900 py-4 sm:py-4 rounded-2xl font-bold text-base sm:text-lg flex items-center justify-center gap-3 transition-all min-h-[56px]">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <span>261 554 7377</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-10 sm:mt-16">
+                <p class="text-[9px] sm:text-[10px] text-slate-500 font-orbitron uppercase tracking-[0.3em] sm:tracking-[0.4em]">&copy; 2025 Scan Pro - Mendoza, Argentina</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Navegación Inferior Móvil -->
+    <nav class="mobile-bottom-nav md:hidden" role="navigation" aria-label="Navegación móvil">
+        <div class="mobile-bottom-nav-inner">
+            <a href="#beneficios" class="nav-item" data-nav="beneficios">
+                <i class="fas fa-star" aria-hidden="true"></i>
+                <span>Beneficios</span>
+            </a>
+            <a href="#servicios" class="nav-item" data-nav="servicios">
+                <i class="fas fa-cogs" aria-hidden="true"></i>
+                <span>Servicios</span>
+            </a>
+            <div class="nav-item-center">
+                <a href="https://wa.me/5492615547377?text=Hola,%20necesito%20un%20diagnóstico%20para%20mi%20vehículo" class="nav-item nav-cta" aria-label="Contactar por WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
+            </div>
+            <a href="#ubicacion" class="nav-item" data-nav="ubicacion">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span>Ubicación</span>
+            </a>
+            <a href="#contacto" class="nav-item" data-nav="contacto">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                <span>Contacto</span>
             </a>
         </div>
     </nav>
 
-    <!-- Hero / Portada -->
-    <header class="hero-gradient min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden text-white">
-        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
-            <div class="w-full lg:w-1/2 text-center lg:text-left z-10">
-                <span class="inline-block px-4 py-1 mb-6 text-[10px] font-bold tracking-[0.2em] text-red-500 uppercase border border-red-500/40 rounded-full bg-red-500/10">
-                    Equipamiento de última generación
-                </span>
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 font-orbitron uppercase tracking-tight">
-                    Diagnóstico <br> <span class="text-red-600 text-glow">Tecnología Pro</span>
-                </h1>
-                <p class="text-slate-300 text-base md:text-lg mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light">
-                    Localizamos fallas que otros no encuentran. Escaneo profundo de sistemas para vehículos nacionales e importados con precisión nivel concesionario.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="#servicios" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-red-600/30 text-center uppercase text-sm tracking-wider">
-                        Ver Servicios
-                    </a>
-                    <a href="tel:2615547377" class="w-full sm:w-auto border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-2xl font-bold transition-all text-center">
-                        <i class="fas fa-phone-alt mr-2 text-red-500"></i> 261 554 7377
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Elemento visual central -->
-            <div class="w-full lg:w-1/2 relative flex justify-center">
-                <div class="relative z-10 bg-slate-800 p-4 rounded-[2.5rem] shadow-2xl border border-slate-700 max-w-[320px] sm:max-w-md w-full">
-                    <div class="bg-black aspect-[4/3] rounded-[1.8rem] flex flex-col items-center justify-center relative overflow-hidden border border-slate-600">
-                        <div class="absolute inset-0 bg-gradient-to-t from-red-900/40 to-transparent"></div>
-                        <i class="fas fa-satellite-dish text-red-600 text-5xl mb-3 animate-pulse"></i>
-                        <p class="text-white text-[9px] font-orbitron tracking-[0.5em] opacity-80">SCAN PRO SYSTEM V2</p>
-                    </div>
-                </div>
-                <div class="absolute -top-10 -right-10 w-48 h-48 bg-red-600/20 rounded-full blur-[80px] pointer-events-none"></div>
-            </div>
-        </div>
-    </header>
+    <!-- WhatsApp Floating Button (Desktop) -->
+    <div class="whatsapp-fab hidden md:flex">
+        <a href="https://wa.me/5492615547377?text=Hola,%20necesito%20un%20diagnóstico%20para%20mi%20vehículo"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+    </div>
 
-    <!-- Marquee de Marcas -->
-    <section class="py-12 bg-white border-b border-slate-100 overflow-hidden">
-        <div class="text-center mb-8 px-4">
-            <h2 class="text-[10px] font-bold tracking-[0.4em] text-slate-400 uppercase mb-2">Cobertura Nacional e Internacional</h2>
-            <p class="text-xl font-bold text-slate-900 font-orbitron uppercase tracking-tighter">Diagnosticamos Todas las Marcas</p>
-        </div>
-        
-        <div class="relative flex overflow-x-hidden">
-            <div class="marquee py-4">
-                <div class="flex items-center gap-10 sm:gap-20 px-4">
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Toyota</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Ford</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Volkswagen</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Chevrolet</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Nissan</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Ram</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Jeep</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Audi</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Bmw</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Peugeot</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Fiat</span>
-                </div>
-                <div class="flex items-center gap-10 sm:gap-20 px-4">
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Toyota</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Ford</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Volkswagen</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Chevrolet</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Nissan</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Ram</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Jeep</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Audi</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Bmw</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Peugeot</span>
-                    <span class="text-xl font-black text-slate-300 uppercase tracking-tighter italic">Fiat</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" aria-hidden="true"></div>
 
-    <!-- Sección de Pickups -->
-    <section class="py-20 bg-slate-50">
-        <div class="container mx-auto px-4">
-            <div class="bg-white rounded-[3rem] p-8 lg:p-14 border border-slate-100 shadow-xl flex flex-col lg:flex-row items-center gap-12">
-                <div class="w-full lg:w-1/2">
-                    <h2 class="text-3xl font-bold font-orbitron mb-6 leading-tight uppercase">Especialistas en <br> <span class="text-red-600">Pickups 4x4</span></h2>
-                    <p class="text-slate-600 mb-8 leading-relaxed text-sm md:text-base">
-                        Contamos con tecnología de avanzada específica para camionetas. Realizamos reseteos de mantenimiento y configuraciones profundas.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-slate-50 p-4 rounded-2xl flex items-center gap-3 border border-slate-100">
-                            <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white text-xs"><i class="fas fa-truck"></i></div>
-                            <span class="font-bold text-xs uppercase tracking-tight">Hilux / SW4 / Corolla</span>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-2xl flex items-center gap-3 border border-slate-100">
-                            <div class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-xs"><i class="fas fa-truck"></i></div>
-                            <span class="font-bold text-xs uppercase tracking-tight">Amarok / Amarok V6</span>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-2xl flex items-center gap-3 border border-slate-100">
-                            <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center text-white text-xs"><i class="fas fa-truck"></i></div>
-                            <span class="font-bold text-xs uppercase tracking-tight">Ranger / Raptor / F150</span>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-2xl flex items-center gap-3 border border-slate-100">
-                            <div class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white text-xs"><i class="fas fa-truck"></i></div>
-                            <span class="font-bold text-xs uppercase tracking-tight">S10 / Ram 1500 / 2500</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
-                    <div class="bg-slate-900 rounded-3xl p-6 text-white text-center flex flex-col items-center justify-center aspect-square shadow-lg shadow-slate-900/10">
-                        <i class="fas fa-smog text-3xl mb-3 text-red-600"></i>
-                        <span class="text-[9px] font-bold uppercase tracking-widest leading-tight">Regeneración DPF Diesel</span>
-                    </div>
-                    <div class="bg-slate-100 rounded-3xl p-6 text-slate-800 text-center flex flex-col items-center justify-center aspect-square border border-slate-200">
-                        <i class="fas fa-code-branch text-3xl mb-3"></i>
-                        <span class="text-[9px] font-bold uppercase tracking-widest leading-tight">Codificación Inyectores</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios Principales -->
-    <section id="servicios" class="py-20 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-12 font-orbitron uppercase">Nuestros Servicios</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="service-card p-8 bg-gray-50 rounded-3xl border border-gray-100 text-left">
-                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-xl mb-6 shadow-sm">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 font-orbitron uppercase tracking-tight">Escaneo Integral</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Acceso a todos los módulos: Motor, ABS, Airbag, BSI, Confort. Informe de fallas histórico y actual.
-                    </p>
-                </div>
-                <!-- Card 2 -->
-                <div class="service-card p-8 bg-gray-50 rounded-3xl border border-gray-100 text-left">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl mb-6 shadow-sm">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 font-orbitron uppercase tracking-tight">Codificación Pro</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Programación de llaves, emparejamiento de módulos, adaptación de cuerpos de aceleración y regeneraciones.
-                    </p>
-                </div>
-                <!-- Card 3 -->
-                <div class="service-card p-8 bg-gray-50 rounded-3xl border border-gray-100 text-left">
-                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-xl mb-6 shadow-sm">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 font-orbitron uppercase tracking-tight">Pruebas Activas</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Prueba bidireccional de componentes eléctricos para localizar fallas sin necesidad de desarmar el vehículo.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer de Contacto -->
-    <footer id="contacto" class="py-20 bg-slate-900 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <div class="max-w-xl mx-auto bg-white/5 border border-white/10 p-10 rounded-[4rem] backdrop-blur-sm shadow-2xl">
-                <div class="w-20 h-20 bg-red-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-red-600/30 rotate-6 transition-transform hover:rotate-0">
-                    <i class="fas fa-id-card text-3xl"></i>
-                </div>
-                <h2 class="text-[10px] font-bold tracking-[0.4em] text-red-500 uppercase mb-4 font-orbitron">Especialista en Diagnóstico</h2>
-                <h3 class="text-4xl font-extrabold mb-1 font-orbitron uppercase">SCAN PRO</h3>
-                <p class="text-xl font-bold text-slate-300 mb-8 italic">Rodrigo Martin</p>
-                
-                <div class="flex flex-col gap-4">
-                    <a href="https://wa.me/5492615547377" target="_blank" class="bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-xl shadow-green-600/10">
-                        <i class="fab fa-whatsapp text-2xl"></i> WhatsApp
-                    </a>
-                    <a href="tel:2615547377" class="bg-white text-slate-900 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition-all">
-                        <i class="fas fa-phone-alt"></i> 261 554 7377
-                    </a>
-                </div>
-            </div>
-            
-            <div class="mt-16 opacity-40">
-                <p class="text-[10px] font-orbitron uppercase tracking-[0.4em]">&copy; 2025 Mendoza, Argentina</p>
-            </div>
-        </div>
-    </footer>
+    <!-- JavaScript -->
+    <script type="module" src="js/main.js"></script>
 
 </body>
 </html>

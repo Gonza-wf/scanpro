@@ -1,0 +1,333 @@
+/* ========================================
+   Scan Pro - Animaciones
+   ======================================== */
+
+/* ========== MARQUEE SCROLL ========== */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ========== FADE IN ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========== FADE IN UP ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== FADE IN DOWN ========== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== SLIDE IN LEFT ========== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========== SLIDE IN RIGHT ========== */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========== SCALE IN ========== */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ========== BOUNCE IN ========== */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ========== PULSE GLOW ========== */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(227, 30, 36, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(227, 30, 36, 0.6);
+    }
+}
+
+/* ========== PULSE ICON ========== */
+@keyframes pulseIcon {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ========== FLOAT ========== */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ========== SHINE ========== */
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* ========== RIPPLE ========== */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ========== GRADIENT SHIFT ========== */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ========== SPIN ========== */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========== HEARTBEAT ========== */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+}
+
+/* ========================================
+   Animation Utility Classes
+   ======================================== */
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-slide-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-slide-right {
+    animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-bounce-in {
+    animation: bounceIn 0.8s ease-out forwards;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.animate-pulse {
+    animation: pulseIcon 2s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* ========================================
+   Animation Delays
+   ======================================== */
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+/* ========================================
+   Hero Animation Sequence
+   ======================================== */
+
+.hero-badge {
+    animation: fadeInDown 0.6s ease-out 0.2s both;
+}
+
+.hero-title {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.hero-description {
+    animation: fadeIn 0.6s ease-out 0.6s both;
+}
+
+.hero-buttons {
+    animation: fadeInUp 0.6s ease-out 0.8s both;
+}
+
+.hero-visual {
+    animation: scaleIn 1s ease-out 0.5s both;
+}
+
+.hero-visual-icon {
+    animation: pulseIcon 2s ease-in-out infinite;
+}
+
+/* ========================================
+   MOBILE ANIMATIONS
+   ======================================== */
+
+@media (max-width: 767px) {
+    /* Hero más rápido en móvil */
+    .hero-badge {
+        animation: fadeInDown 0.5s ease-out 0.1s both !important;
+    }
+
+    .hero-title {
+        animation: fadeInUp 0.6s ease-out 0.2s both !important;
+    }
+
+    .hero-description {
+        animation: fadeIn 0.5s ease-out 0.4s both !important;
+    }
+
+    .hero-buttons {
+        animation: fadeInUp 0.5s ease-out 0.5s both !important;
+    }
+
+    .hero-visual {
+        animation: scaleIn 0.7s ease-out 0.3s both !important;
+    }
+
+    /* Animaciones al scroll más rápidas */
+    [data-animate] {
+        transition-duration: 400ms !important;
+    }
+
+    /* Desactivar animaciones flotantes en móvil para mejor performance */
+    .animate-float {
+        animation: none !important;
+    }
+
+    /* Botón WhatsApp con pulso más sutil */
+    .btn-whatsapp {
+        animation: none !important;
+    }
+
+    /* Touch feedback instantáneo */
+    .service-card:active,
+    .pickup-card:active {
+        transform: scale(0.98) !important;
+        transition: transform 100ms ease !important;
+    }
+}
+
+/* Landscape móvil - animaciones más simples */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero-badge,
+    .hero-title,
+    .hero-description,
+    .hero-buttons {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Reducir motion para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+    .hero-badge,
+    .hero-title,
+    .hero-description,
+    .hero-buttons,
+    .hero-visual,
+    .hero-visual-icon {
+        animation: none !important;
+    }
+}
